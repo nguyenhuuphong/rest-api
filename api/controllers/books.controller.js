@@ -12,9 +12,19 @@ cloudinary.config({
     api_key: process.env.CLOUD_API_KEY,
     api_secret: process.env.CLOUD_API_SECRET
 });
-module.exports.home = async function (req, res){
-    var books = await Book.find();  
+module.exports.home = async function (req, res, next){
+   try {
+   	var a; 
+   	a.b();
+   	var books = await Book.find();  
     res.json(books);
+	
+	} catch(error){
+		
+		res.status(500).send('have a Broke!');
+        next(error);
+	}
+
   }  
 module.exports.apiPost = async function (req, res){
 	var books = await Book.create(req.body);
