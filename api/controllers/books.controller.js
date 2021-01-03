@@ -14,8 +14,6 @@ cloudinary.config({
 });
 module.exports.home = async function (req, res, next){
    try {
-   	var a; 
-   	a.b();
    	var books = await Book.find();  
     res.json(books);
 	
