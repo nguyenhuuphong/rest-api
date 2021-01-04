@@ -54,11 +54,10 @@ const swaggerOptions = {
         name: "Amazing good job Dev"
       },
       servers: ["http://localhost:3000"],
-       basePath: "/api-docs",
     }
   },
 
-  apis: ["server.js"]  
+  apis: ["docs/*.yml"]  
 };
 // router
 /** 
